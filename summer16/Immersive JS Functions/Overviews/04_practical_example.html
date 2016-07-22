@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+  <head>
+    <title>Practical Example</title>
+    <style type="text/css">
+      * {
+        box-sizing: border-box;
+      }
+      body {
+        margin: 0;
+      }
+      #nav-menu-items {
+        overflow: hidden;
+        margin: 0;
+        padding: 0;
+        list-style: none;
+        background: #ccc;
+      }
+      #nav-menu-items li {
+        float: left;
+        width: 33%;
+        padding: 10px;
+        text-align center;
+      }
+      #js-fill-menu {
+        color: #fff;
+        background: blue;
+        padding: 10px 15px;
+        margin: 20px 0 0;
+        text-decoration: none;
+        display: inline-block;
+      }
+    </style>
+  </head>
+  <body>
+
+    <div class="nav-menu">
+      <ul id="nav-menu-items">
+      </ul>
+    </div>
+
+    <a id="js-fill-menu" href="#">Fill Menu</a>
+    
+    <script>
+
+      // Define navigation menu items
+      var navMenuItems = {
+        0: {
+          linkTxt: "Home",
+          relURL: "/#home"
+        },
+        1: {
+          linkTxt: "About Me",
+          relURL: "/#about"
+        },
+        2: {
+          linkTxt: "Portfolio",
+          relURL: "/#portfolio"
+        }
+      };
+
+      // Create HTML from the nav menu items. Run on load with anonymous,
+      // self invoking function.
+      var navMenuLinks = (function() {
+
+        var links = '';
+
+        // Use a for loop to get into the navMenuItems object.
+        for(navMenuItem in navMenuItems) {
+          // Provide a key to the current navMenuItem iteration to the parent object.
+          // Refernce the next key to get the value out.
+          // Note: Mixed notation styles doesn't happen frequently. Just an example.
+          links += '<li><a href="' + navMenuItems[navMenuItem].relURL + '">' + navMenuItems[navMenuItem].linkTxt + '</a></li>';
+        }
+
+        // Return the final HTML markup after the loop.
+        return links;
+
+      })();
+
+      // Find the menu filler button, attach click, and pull in the HTML
+      // returned to the navMenuLinks variable.
+      document.getElementById('js-fill-menu').addEventListener('click', function() {
+          document.getElementById('nav-menu-items').innerHTML = navMenuLinks;
+      });
+
+    </script>
+  </body>
+</html>

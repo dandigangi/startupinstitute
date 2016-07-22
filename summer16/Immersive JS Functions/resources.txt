@@ -1,0 +1,6 @@
+
+Helpful Resources for Today's Lesson:
+
+Arrays - https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array
+Objects - https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object
+Functions - https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Functions
