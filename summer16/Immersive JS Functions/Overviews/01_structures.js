@@ -12,6 +12,13 @@ var fruit = ['apple', 'orange', 'banana'];
 // Accessing arrays
 fruit[0];
 
+// Manipulating arrays //
+// Remove last item in array
+fruit.pop();
+
+// Find the current index of an array object by name
+fruit.lastIndexOf('orange');
+
 
 /////////////////////
 // --- Objects --- //
